@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DataVault</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <!-- Include CryptoJS for encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="logo">DataVault</div>
+            <div class="user-menu">
+                <span class="user-name" id="userName">Welcome</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul class="menu">
+                <li class="menu-item active">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon">📦</span>
+                    <span>Storage</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon">🔐</span>
+                    <span>Security</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1, #0ea5e9);">💾</div>
+                    <div class="stat-info">
+                        <h3 id="totalDataStored">0 MB</h3>
+                        <p>Total Data Stored</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #059669);">📡</div>
+                    <div class="stat-info">
+                        <h3 id="lastWifiCaptured">Not Connected</h3>
+                        <p>Last Wi-Fi Captured</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">🌐</div>
+                    <div class="stat-info">
+                        <h3 id="availableOffline">0 MB</h3>
+                        <p>Available Offline</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🔒</div>
+                    <div class="stat-info">
+                        <h3 id="encryptionStatus">Active</h3>
+                        <p>Encryption Status</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wi-Fi Connection Section -->
+            <div class="action-section">
+                <div class="section-card">
+                    <h2>Wi-Fi Connection</h2>
+                    <div class="wifi-status" id="wifiStatus">
+                        <span class="status-indicator offline"></span>
+                        <span>Not Connected</span>
+                    </div>
+                    <div class="wifi-networks" id="wifiNetworks"></div>
+                    <button class="primary-btn" id="connectWifiBtn" onclick="connectWiFi()">
+                        🔍 Scan for Wi-Fi Networks
+                    </button>
+                </div>
+
+                <!-- Storage Session Section -->
+                <div class="section-card">
+                    <h2>Data Capture</h2>
+                    <p class="card-description">Capture and encrypt data packets from your Wi-Fi connection</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-container" id="progressContainer" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">0%</div>
+                        <div class="encryption-status" id="encryptionMessage"></div>
+                    </div>
+
+                    <button class="primary-btn" id="storeSessionBtn" onclick="storeSession()" disabled>
+                        📦 Store Session
+                    </button>
+                </div>
+            </div>
+
+            <!-- Offline Access Section -->
+            <div class="section-card full-width">
+                <h2>Offline Data Access</h2>
+                <p class="card-description">Access your stored connectivity data without active Wi-Fi</p>
+                
+                <div class="stored-sessions" id="storedSessions">
+                    <!-- Sessions will be populated here -->
+                </div>
+
+                <div class="action-buttons">
+                    <button class="secondary-btn" onclick="accessOffline()">
+                        🌐 Access Offline Data
+                    </button>
+                    <button class="danger-btn" onclick="deleteCache()">
+                        🗑️ Delete Cache
+                    </button>
+                    <button class="secondary-btn" onclick="syncAgain()">
+                        🔄 Sync Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="section-card full-width">
+                <h2>Recent Activity</h2>
+                <div class="activity-log" id="activityLog">
+                    <div class="activity-item">
+                        <span class="activity-icon">ℹ️</span>
+                        <span class="activity-text">Welcome to DataVault! Connect to Wi-Fi to get started.</span>
+                        <span class="activity-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>

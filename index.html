@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVault - Portable Internet Storage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Clean Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="4" y="8" width="24" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 4V8M12 4V6M20 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>DataVault</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <button class="btn btn-primary" onclick="handleCTAClick()">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="tag">✨ New Innovation</div>
+                    <h1>Store Your Internet.<br>Use It Anywhere.</h1>
+                    <p class="hero-text">
+                        DataVault captures Wi-Fi connectivity and makes it portable. 
+                        Access internet on-the-go without expensive mobile recharges.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-large btn-primary" onclick="handleCTAClick()">
+                            Start Free Trial
+                        </button>
+                        <button class="btn btn-large btn-secondary" onclick="scrollToSection('how-it-works')">
+                            Learn More
+                        </button>
+                    </div>
+                    <p class="trust-text">Trusted by 50,000+ users worldwide</p>
+                </div>
+                <div class="hero-image">
+                    <div class="card-soft card-1">
+                        <div class="card-header">
+                            <span class="icon">📡</span>
+                            <span class="status-dot active"></span>
+                        </div>
+                        <h4>Wi-Fi Connected</h4>
+                        <p>Home Network - 5G</p>
+                    </div>
+                    <div class="card-soft card-2">
+                        <div class="card-header">
+                            <span class="icon">🔐</span>
+                        </div>
+                        <h4>Encrypted</h4>
+                        <p>AES-256 Security</p>
+                    </div>
+                    <div class="card-soft card-3">
+                        <div class="card-header">
+                            <span class="icon">💾</span>
+                        </div>
+                        <h4>150 MB Stored</h4>
+                        <div class="mini-progress">
+                            <div class="mini-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Features</span>
+                <h2>Everything you need</h2>
+                <p>Simple, powerful, and built for everyone</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="8" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 20H26M20 14V26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Capture</h3>
+                    <p>Automatically captures and stores network packets from your Wi-Fi connection efficiently.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 8L26 14L20 20L14 14L20 8Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 20L14 26L20 20L14 14L8 20Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 20L26 26L20 20L26 14L32 20Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 32L14 26L20 20L26 26L20 32Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Bank-Grade Security</h3>
+                    <p>Your data is encrypted with AES-256 encryption, ensuring complete privacy and protection.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 14V20L24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Access</h3>
+                    <p>Retrieve your stored connectivity anywhere, anytime without active Wi-Fi or mobile data.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 8V32M8 20H32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Cloud Sync</h3>
+                    <p>Seamlessly sync your data across multiple devices with cloud-assisted technology.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="12" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 16H28M12 22H22M12 28H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Track usage, savings, and performance with beautiful real-time visualizations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 8L24 16H32L26 22L28 30L20 24L12 30L14 22L8 16H16L20 8Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Cost Savings</h3>
+                    <p>Save up to 70% on mobile data costs by utilizing your unlimited home Wi-Fi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Process</span>
+                <h2>How it works</h2>
+                <p>Get started in three simple steps</p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect Wi-Fi</h3>
+                        <p>Link DataVault to your home or office Wi-Fi network with unlimited data plan.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Capture & Encrypt</h3>
+                        <p>Our system intelligently captures, compresses and encrypts network packets securely.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Use Anywhere</h3>
+                        <p>Access your stored connectivity on-the-go without Wi-Fi or mobile data recharges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to get started?</h2>
+                <p>Join thousands of users saving money on mobile data</p>
+                <button class="btn btn-large btn-primary" onclick="handleCTAClick()">
+                    Start Free Trial
+                </button>
+                <p class="cta-note">No credit card required</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="24" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 4V8M12 4V6M20 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>DataVault</span>
+                    </div>
+                    <p>Making internet portable and affordable for everyone.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 DataVault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-clean.js"></script>
+</body>
+</html>
